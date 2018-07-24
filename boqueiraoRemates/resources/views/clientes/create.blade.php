@@ -75,7 +75,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>CNPJ</label>
-                        <input type="text" class="form-control" placeholder="CNPJ" name="cnpj" title="Por favor, digite o CNPJ no formato 00.000.000/0000-00">
+                        <input type="text" class="form-control" placeholder="CNPJ" name="cnpj">
                     </div>
                 </div>
             </div>  
@@ -86,7 +86,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>RG</label>
-                        <input type="text" class="form-control" placeholder="RG" name="rg" required>
+                        <input type="text" class="form-control" placeholder="RG" name="rg">
                     </div>
                 </div>
 
@@ -111,7 +111,7 @@
                         <label>Data de Nascimento</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-birthday-cake"></i></span>
-                                <input type="text" class="form-control" placeholder="Data de Nascimento" name="data_nasc" pattern="\d{2}\/\d{2}\/\d{4}" title="Por favor, digite a Data de Nascimento no formato dd/mm/YYYY" required>
+                                <input type="text" class="form-control" placeholder="Data de Nascimento" name="data_nasc">
                             </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                         <label>Endereço</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-home"></i></span>
-                                <input type="text" class="form-control" placeholder="Endereço" name="endereco" required>
+                                <input type="text" class="form-control" placeholder="Endereço" name="endereco">
                             </div>
                     </div>
                 </div>
@@ -143,31 +143,31 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>CEP</label>
-                        <input type="text" class="form-control" placeholder="CEP" name="cep" required>
+                        <input type="text" class="form-control" placeholder="CEP" name="cep">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Cidade</label>
-                        <input type="text" class="form-control" placeholder="Cidade" name="cidade" required>
+                        <input type="text" class="form-control" placeholder="Cidade" name="cidade">
                     </div>
                 </div>   
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>UF</label>
-                        <input type="text" class="form-control" placeholder="UF" name="uf" required>
+                        <input type="text" class="form-control" placeholder="UF" name="uf">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>País</label>
-                        <input type="text" class="form-control" placeholder="País" name="pais" required>
+                        <input type="text" class="form-control" placeholder="País" name="pais">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Telefone Comercial</label>
-                        <input type="text" class="form-control" placeholder="Telefone Comercial" name="tel_comercial"required>
+                        <input type="text" class="form-control" placeholder="Telefone Comercial" name="tel_comercial">
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -179,37 +179,37 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Telefone Celular</label>
-                        <input type="text" class="form-control" placeholder="Telefone Celular" name="tel_celular" required>
+                        <input type="text" class="form-control" placeholder="Telefone Celular" name="tel_celular">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Banco</label>
-                        <input type="text" class="form-control" placeholder="Banco" name="banco" required>
+                        <input type="text" class="form-control" placeholder="Banco" name="banco">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Agência</label>
-                        <input type="text" class="form-control" placeholder="Agência" name="agencia" required>
+                        <input type="text" class="form-control" placeholder="Agência" name="agencia">
                     </div>
                 </div> 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Conta Corrente</label>
-                        <input type="text" class="form-control" placeholder="Conta Corrente" name="conta" required>
+                        <input type="text" class="form-control" placeholder="Conta Corrente" name="conta">
                     </div>
                 </div>  
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Profissão</label>
-                        <input type="text" class="form-control" placeholder="Profissão" name="profissao" required>
+                        <input type="text" class="form-control" placeholder="Profissão" name="profissao">
                     </div>
                 </div> 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Cadastro em outras leiloeiras</label>
-                        <select class="form-control" name="cadastro_leiloeiras" required>
+                        <select class="form-control" name="cadastro_leiloeiras">
                             <option>Não</option>
                             <option>Sim</option>
                         </select>
@@ -226,21 +226,21 @@
                         <label>Renda</label>
                             <div class="input-group">
                                 <span class="input-group-addon">$</span>
-                                    <input type="text" class="form-control" placeholder="Renda" name="renda" required>
-                                    <span class="input-group-addon">.00</span>
+                                    <input type="text" class="form-control" placeholder="Renda" name="renda" >
+                                    <span class="input-group-addon">,00</span>
                             </div>
                     </div>
                 </div> 
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Estabelecimento</label>
-                        <input type="text" class="form-control" placeholder="Estabelecimento" name="estabelecimento" required>
+                        <input type="text" class="form-control" placeholder="Estabelecimento" name="estabelecimento" >
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label>Cliente Ativo</label>
-                        <select class="form-control" name="ativo" required>
+                        <label>Cliente Habilitado</label>
+                        <select class="form-control" name="habilitado">
                             <option>Sim</option>
                             <option>Não</option>    
                         </select>
