@@ -233,21 +233,13 @@
                             </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label>Estabelecimento</label>
                         <input type="text" class="form-control" placeholder="Estabelecimento" name="estabelecimento" >
                     </div>
                 </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label>Cadastro em outras leiloeiras</label>
-                        <select class="form-control" name="cadastro_leiloeiras">
-                            <option>Sim</option>
-                            <option>Não</option>    
-                        </select>
-                    </div>
+                <div class="col-md-3">
                     <div class="form-group">
                         <label>Habilitação</label>
                         <select class="form-control" name="habilitacao">
@@ -258,11 +250,40 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
+                        <label>Cadastro em outras leiloeiras</label>
+                        <select class="form-control" name="cadastro_leiloeiras">
+                            <option>Sim</option>
+                            <option>Não</option>    
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
                         <label>Leiloeiras que possui cadastro</label>
                         <input type="text" class="form-control" placeholder="Leiloeiras" name="leiloeiras">
                     </div>
                 </div> 
-             </div>
+            </div>
+            <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Upload RG, CPF ou CNH</label>
+                    <input type="file" value="Procurar" class="form-control" placeholder="Upload RG, CPF ou CNH" name="scan_rg_cpf_cnh">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Upload Comprovante de Endereço</label>
+                    <input type="file" value="Procurar" class="form-control" placeholder="Upload RG, CPF ou CNH" name="scan_comprovante_endereco">
+                </div>
+            </div> 
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Upload Certidão Negativa</label>
+                    <input type="file" value="Procurar" class="form-control" placeholder="Upload RG, CPF ou CNH" name="scan_negativas">
+                </div>
+            </div> 
+            </div>
 
             
 
