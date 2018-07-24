@@ -61,7 +61,7 @@ class ClienteController extends Controller
         } catch (\Exception $e) {
             return redirect()
                 ->back()
-                ->with('error', 'Falha no cadastro. O CPF informado já está cadastrado!');
+                ->with('error', 'Falha no cadastro. Verifique se o cliente já foi cadastrado!');
         } catch (PDOException $e) {
             dd($e);
         }             

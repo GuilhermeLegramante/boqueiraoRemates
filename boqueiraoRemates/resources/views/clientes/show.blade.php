@@ -11,7 +11,7 @@
         <div class="box-header with-border">
           <h3 class="box-title">Detalhes</h3>
         </div>
-    <form method="post" action="{{route ('clientes.store')}}">
+    <form method="post" action="">
         {{ csrf_field() }}
 
         <div class="box-body">
