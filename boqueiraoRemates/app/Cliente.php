@@ -10,7 +10,7 @@ class Cliente extends Model
         "nome", "email", "cpf", "cnpj", "rg", "nome_pai", "nome_mae", "data_nasc",
         "endereco", "complemento", "bairro", "cep", "cidade", "uf", "pais", "tel_comercial",
         "tel_residencial", "tel_celular", "banco", "agencia", "conta", "profissao", "renda",
-        "cadastro_leiloeiras", "leiloeiras", "estabelecimento", "ativo"
+        "cadastro_leiloeiras", "leiloeiras", "estabelecimento", "habilitacao"
     ];
 
     protected $table = "clientes";
