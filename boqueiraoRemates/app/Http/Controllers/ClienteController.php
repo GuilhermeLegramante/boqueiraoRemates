@@ -54,14 +54,32 @@ class ClienteController extends Controller
     {
         try{
             $dados = $request->all();
-            Cliente::create($dados);
+
+            $dados['scan_negativas'] = $request->scan_negativas;
+            if($request->hasFile('scan_negativas') && $request->file('scan_negativas')->isValid()){ 
+                $nome = 'negativas-'.$request->cpf.'-'.kebab_case($request->nome);
+                
+                $extensao = $request->scan_negativas->extension();
+                $nomeArquivoNegativas = "{$nome}.{$extensao}";
+
+                $dados['scan_negativas'] = $nomeArquivoNegativas;
+
+                $uploadNegativas =  $request->scan_negativas->storeAs('negativas_clientes', $nomeArquivoNegativas);
+
+                Cliente::create($dados);
+
+            }
+            
+
             return redirect()
                 ->back()
                 ->with('success', 'Cliente cadastrado com sucesso!');
         } catch (\Exception $e) {
+            dd($e);
             return redirect()
                 ->back()
                 ->with('error', 'Falha no cadastro. Verifique se o cliente já foi cadastrado!');
+                
         } catch (PDOException $e) {
             dd($e);
         }             

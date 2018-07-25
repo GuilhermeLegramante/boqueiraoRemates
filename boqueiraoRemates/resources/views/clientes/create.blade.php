@@ -34,7 +34,7 @@
 @endif
 
 <div class="box box-default">
-    <form method="post" action="{{route ('clientes.store')}}">
+    <form method="post" action="{{route ('clientes.store')}}" enctype="multipart/form-data">
         {{ csrf_field() }}
 
         <div class="box-body">
