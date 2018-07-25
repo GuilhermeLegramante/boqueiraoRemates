@@ -248,22 +248,27 @@
                         </select>
                     </div>
                 </div>
+            </div>
+
+             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Cadastro em outras leiloeiras</label>
-                        <select class="form-control" name="cadastro_leiloeiras">
+                        <select class="form-control" name="cadastro_leiloeiras" id="cadastro_leiloeiras">
                             <option>Sim</option>
                             <option>Não</option>    
                         </select>
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Leiloeiras que possui cadastro</label>
-                        <input type="text" class="form-control" placeholder="Leiloeiras" name="leiloeiras">
+                        <input type="text" class="form-control" placeholder="Leiloeiras" name="leiloeiras" id="leiloeiras">
                     </div>
                 </div> 
             </div>
+            
             <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
