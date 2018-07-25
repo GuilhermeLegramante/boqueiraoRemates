@@ -264,11 +264,11 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Leiloeiras que possui cadastro</label>
-                        <input type="text" class="form-control" placeholder="Leiloeiras" name="leiloeiras" id="leiloeiras">
+                        <textarea class="form-control" rows="3" placeholder="Leiloeiras..." name="leiloeiras" id="leiloeiras"></textarea>
                     </div>
                 </div> 
             </div>
-            
+
             <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
