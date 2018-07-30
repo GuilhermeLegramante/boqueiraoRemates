@@ -18,7 +18,7 @@ class ClienteController extends Controller
      */
     public function index(Request $request)
     {
-        $qtd = $request['qtd'] ?: 2;
+        $qtd = $request['qtd'] ?: 15;
         $page = $request['page'] ?: 1;
         $buscar = $request['buscar'];
 
@@ -56,33 +56,56 @@ class ClienteController extends Controller
             $dados = $request->all();
 
             $dados['scan_negativas'] = $request->scan_negativas;
-            if($request->hasFile('scan_negativas') && $request->file('scan_negativas')->isValid()){ 
-                $nome = 'negativas-'.$request->cpf.'-'.kebab_case($request->nome);
+            $dados['scan_rg_cpf_cnh'] = $request->scan_cpf_cnh;
+            $dados['scan_comprovante_endereco'] = $request->scan_comprovante_endereco;
+            if($request->hasFile('scan_negativas') && $request->file('scan_negativas')->isValid()
+            && $request->hasFile('scan_rg_cpf_cnh') && $request->file('scan_rg_cpf_cnh')->isValid()
+            && $request->hasFile('scan_comprovante_endereco') && $request->file('scan_comprovante_endereco')->isValid()){ 
                 
+                /**
+                 * Upload Negativas
+                 */
+                $nome = 'negativas-'.$request->cpf.'-'.kebab_case($request->nome);
                 $extensao = $request->scan_negativas->extension();
                 $nomeArquivoNegativas = "{$nome}.{$extensao}";
-
                 $dados['scan_negativas'] = $nomeArquivoNegativas;
-
                 $uploadNegativas =  $request->scan_negativas->storeAs('negativas_clientes', $nomeArquivoNegativas);
 
+                /**
+                 * Upload CPF CNH
+                 */
+                $nome2 = 'rg_cpf_cnh-'.$request->cpf.'-'.kebab_case($request->nome);
+                $extensao2 = $request->scan_rg_cpf_cnh->extension();
+                $nomeArquivoCpfCnh = "{$nome2}.{$extensao2}";
+                $dados['scan_rg_cpf_cnh'] = $nomeArquivoCpfCnh;
+                $uploadCpfCnh =  $request->scan_rg_cpf_cnh->storeAs('cpf_cnh_clientes', $nomeArquivoCpfCnh);
+
+                /**
+                 * Upload Comprovante de Endereço
+                 */
+                $nome3 = 'comprovante_endereco-'.$request->cpf.'-'.kebab_case($request->nome);
+                $extensao3 = $request->scan_comprovante_endereco->extension();
+                $nomeArquivoComprovanteEndereco = "{$nome3}.{$extensao3}";
+                $dados['scan_comprovante_endereco'] = $nomeArquivoComprovanteEndereco;
+                $uploadComprovanteEndereco =  $request->scan_comprovante_endereco->storeAs('comprovante_endereco_clientes', $nomeArquivoComprovanteEndereco);
+                
+                
+                
                 Cliente::create($dados);
 
             }
-            
-
             return redirect()
                 ->back()
                 ->with('success', 'Cliente cadastrado com sucesso!');
         } catch (\Exception $e) {
-            dd($e);
             return redirect()
                 ->back()
                 ->with('error', 'Falha no cadastro. Verifique se o cliente já foi cadastrado!');
                 
         } catch (PDOException $e) {
-            dd($e);
-        }             
+            return redirect()
+            ->back()
+            ->with('error', 'Falha no cadastro. Verifique se o cliente já foi cadastrado!');        }             
             
     }
 
