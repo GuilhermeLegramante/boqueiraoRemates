@@ -246,18 +246,40 @@
             <div class="row">
             
             <div class="col-md-4">
-                <div class="form-group">                  
-                    <a href="{{ url('storage/rg_cpf_cnh_clientes/'.$cliente->scan_rg_cpf_cnh) }}">RG, CPF ou CNH</a>
+                <div class="form-group"> 
+                    @if ($cliente->scan_rg_cpf_cnh == null )
+                        <label>
+                            <h5>Nenhum documento (rg, cpf ou cnh) cadastrado</h5>
+                        </label>
+                    @else
+                        <a href="{{ url('storage/rg_cpf_cnh_clientes/'.$cliente->scan_rg_cpf_cnh) }}">RG, CPF ou CNH</a>
+                    @endif  
+                    
+
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="form-group"> 
-                    <a href="{{ url('storage/comprovante_endereco_clientes/'.$cliente->scan_comprovante_endereco) }}">Comprovante de Endereço</a>
+                <div class="form-group">
+                    @if ($cliente->scan_comprovante_endereco == null)
+                        <label>
+                            <h5>Nenhum documento (comprovante de endereço) cadastrado</h5>
+                        </label>
+                    @else
+                        <a href="{{ url('storage/comprovante_endereco_clientes/'.$cliente->scan_comprovante_endereco) }}">Comprovante de Endereço</a>
+                    @endif
+                    
+
                 </div>
             </div> 
             <div class="col-md-4">
                 <div class="form-group">
-                    <a href="{{ url('storage/negativas_clientes/'.$cliente->scan_negativas) }}">Certidão Negativa</a>
+                    @if ($cliente->scan_negativas == null)
+                        <label>
+                            <h5>Nenhum documento (certidão negativa) cadastrado</h5>
+                        </label>
+                    @else
+                        <a href="{{ url('storage/negativas_clientes/'.$cliente->scan_negativas) }}">Certidão Negativa</a> 
+                    @endif               
                 </div>
             </div> 
             </div>
