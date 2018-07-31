@@ -3,7 +3,12 @@
 @section('title', 'Boqueirão Remates')
 
 @section('content_header')
-    <h3>Dados do Cliente </h3>
+    <h1>Dados do cliente </h1>
+
+    <ol class="breadcrumb">
+        <li><a href="">Página Inicial</a></li>
+        <li><a href="">Dados do Cliente</a></li>
+    </ol>
 @stop
 
 @section('content')

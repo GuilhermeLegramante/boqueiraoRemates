@@ -111,6 +111,16 @@ return [
     'menu' => [
         'CLIENTES',
         [
+            'text'        => 'Adicionar Cliente Divulgação',
+            'url'         => 'clientes/create',
+            'icon'        => 'plus',
+        ],
+        [
+            'text'        => 'Listar Clientes Divulgação',
+            'url'         => 'clientes/',
+            'icon'        => 'list-ul',
+        ],
+        [
             'text'        => 'Adicionar Cliente',
             'url'         => 'clientes/create',
             'icon'        => 'plus',
@@ -124,24 +134,24 @@ return [
         'PRODUTOS',
         [
             'text'        => 'Adicionar Produto',
-            'url'         => '',
+            'url'         => '/home',
             'icon'        => 'plus',
         ],
         [
             'text'        => 'Listar Produtos',
-            'url'         => 'admin/pages',
+            'url'         => '/home',
             'icon'        => 'list-ul',
         ],
 
         'EVENTOS',
         [
             'text'        => 'Adicionar Evento',
-            'url'         => 'admin/pages',
+            'url'         => '/home',
             'icon'        => 'plus',
         ],
         [
             'text'        => 'Listar Eventos',
-            'url'         => 'admin/pages',
+            'url'         => '/home',
             'icon'        => 'list-ul',
         ],
     ],
