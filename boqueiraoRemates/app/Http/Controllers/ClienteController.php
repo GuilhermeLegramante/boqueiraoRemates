@@ -78,7 +78,7 @@ class ClienteController extends Controller
                 $extensao2 = $request->scan_rg_cpf_cnh->extension();
                 $nomeArquivoCpfCnh = "{$nome2}.{$extensao2}";
                 $dados['scan_rg_cpf_cnh'] = $nomeArquivoCpfCnh;
-                $uploadCpfCnh =  $request->scan_rg_cpf_cnh->storeAs('cpf_cnh_clientes', $nomeArquivoCpfCnh);
+                $uploadCpfCnh =  $request->scan_rg_cpf_cnh->storeAs('rg_cpf_cnh_clientes', $nomeArquivoCpfCnh);
 
                 /**
                  * Upload Comprovante de Endereço
@@ -88,8 +88,6 @@ class ClienteController extends Controller
                 $nomeArquivoComprovanteEndereco = "{$nome3}.{$extensao3}";
                 $dados['scan_comprovante_endereco'] = $nomeArquivoComprovanteEndereco;
                 $uploadComprovanteEndereco =  $request->scan_comprovante_endereco->storeAs('comprovante_endereco_clientes', $nomeArquivoComprovanteEndereco);
-                
-                
                 
                 Cliente::create($dados);
 
@@ -167,6 +165,5 @@ class ClienteController extends Controller
     
         return view('clientes.remove', compact('cliente'));
     }
-
 
 }

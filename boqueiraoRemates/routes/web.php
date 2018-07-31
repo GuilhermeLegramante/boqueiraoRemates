@@ -24,3 +24,4 @@ Route::get('/clientes/remove/{id}', 'ClienteController@remover')->name('clientes
 Route::resource('clientes', 'ClienteController');
 
 Route::get('/pdf', 'PdfController@index')->name('pdf');
+
