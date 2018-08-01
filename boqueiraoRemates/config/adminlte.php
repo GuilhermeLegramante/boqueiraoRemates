@@ -112,7 +112,7 @@ return [
         'CLIENTES',
         [
             'text'        => 'Adicionar Cliente Divulgação',
-            'url'         => 'clientes/create',
+            'url'         => 'clientes_divulgacao/create',
             'icon'        => 'plus',
         ],
         [

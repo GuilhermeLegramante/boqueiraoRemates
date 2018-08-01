@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ClienteDivulgacao;
 
 class ClienteDivulgacaoController extends Controller
 {
@@ -23,7 +24,7 @@ class ClienteDivulgacaoController extends Controller
      */
     public function create()
     {
-        //
+        return view('clientes_divulgacao.create');
     }
 
     /**
@@ -34,7 +35,21 @@ class ClienteDivulgacaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $dados = $request->all();
+
+            ClienteDivulgacao::create($dados);
+
+            
+            return redirect()
+                ->back()
+                ->with('success', 'Cliente cadastrado com sucesso!');
+        } catch (Exception $e) {
+            return redirect()
+            ->back()
+            ->with('error', 'Falha no cadastro. Verifique se o cliente já foi cadastrado!');        
+        
+        }
     }
 
     /**
