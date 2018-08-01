@@ -13,8 +13,27 @@
 
 @section('content')
 
+@if($errors->any())
+    <div class="alert alert-danger" role="alert">
+        @foreach ($errors->all() as $error)
+             {{ $error }}<br>
+        @endforeach
+    /div>
+@endif
+
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+ 
+@if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+
     <div class="panel panel-default">    
-        <div class="panel-heading">Lista de Clientes</div>
         <form method="GET" action="{{route('clientes.index', 'buscar' )}}">
         <div class="row">
             <div class="col-md-12">
@@ -45,10 +64,11 @@
                                 <td>{{$cliente->email}}</td>
                                 <td>{{$cliente->tel_celular}}</td>
                                 <td>{{$cliente->estabelecimento}}</td>
-                                <td>
-                                    <a href="{{route('clientes.edit', $cliente->id)}}"><i class="glyphicon glyphicon-pencil"></i></a>
-                                    <a href="{{route('clientes.remove', $cliente->id)}}"><i class="glyphicon glyphicon-trash"></i></a>
+                                <td class="text-center">
                                     <a href="{{route('clientes.show', $cliente->id)}}"><i class="glyphicon glyphicon-zoom-in"></i></a>
+                                    <a href="{{route('clientes.edit', $cliente->id)}}"><i class="glyphicon glyphicon-pencil"></i></a>
+                                    <a href="{{route('pdf')}}" class="glyphicon glyphicon-save"></a>
+                                    <a href="{{route('clientes.remove', $cliente->id)}}"><i class="glyphicon glyphicon-trash"></i></a>
                                 </td>                                
                             </tr>                         
                         @endforeach                                
@@ -66,7 +86,4 @@
         <a href="{{ url()->previous() }}" class="btn btn-default">Voltar</a>
         <a href="{{route('clientes.create')}}"><button class="btn btn-primary">Adicionar</button></a>
     </div>
-
-    
-
 @stop

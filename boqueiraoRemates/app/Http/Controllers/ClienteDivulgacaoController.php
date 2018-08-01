@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ClienteDivulgacao;
+use Validator;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
 
 class ClienteDivulgacaoController extends Controller
 {
@@ -12,9 +15,22 @@ class ClienteDivulgacaoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $qtd = $request['qtd'] ?: 15;
+        $page = $request['page'] ?: 1;
+        $buscar = $request['buscar'];
+
+        Paginator::currentPageResolver(function () use ($page){
+            return $page;
+        });
+        if($buscar){
+            $clientes_divulgacao = DB::table('clientes_divulgacao')->where('nome', 'like', '%'.$buscar.'%')->paginate($qtd);
+        }else{  
+            $clientes_divulgacao = DB::table('clientes_divulgacao')->paginate($qtd);
+        }
+        $clientes_divulgacao = $clientes_divulgacao->appends(Request::capture()->except('page'));
+        return view('clientes_divulgacao.index', compact('clientes_divulgacao'));
     }
 
     /**
@@ -95,5 +111,12 @@ class ClienteDivulgacaoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function remover($id)
+    {
+        $clienteDivulgacao = ClienteDivulgacao::find($id);
+    
+        return view('clientes_divulgacao.remove', compact('clienteDivulgacao'));
     }
 }

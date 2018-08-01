@@ -144,7 +144,9 @@ class ClienteController extends Controller
         $dados = $request->all();
         $cliente->update($dados);
          
-        return redirect()->route('clientes.index');
+        return redirect()
+            ->back()
+            ->with('success', 'Cliente editado com sucesso!');
     }
 
     /**

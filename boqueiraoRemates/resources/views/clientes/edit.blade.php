@@ -3,7 +3,7 @@
 @section('title', 'Boqueirão Remates')
 
 @section('content_header')
-    <h1>Novo cliente </h1>
+    <h1>Editar cliente </h1>
 
     <ol class="breadcrumb">
         <li><a href="">Página Inicial</a></li>
@@ -21,17 +21,30 @@
     /div>
 @endif
 
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+ 
+@if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+
 <div class="box box-default">
-    <form method="post" action="" enctype="multipart/form-data">
+    <form method="post" action="{{route ('clientes.update', $cliente->id)}}" enctype="multipart/form-data">
+    <input type="hidden" name="_method" value="PUT">
         {{ csrf_field() }}
 
-        <div class="box-body">
+       <div class="box-body">
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
                         <div class="form-group">
                             <label>Nome</label>
-                                <input type="text" class="form-control" placeholder="Nome" name="nome" required value="{{$cliente->nome}}">
+                                <input type="text" class="form-control" placeholder="Nome" name="nome" required value="{{$cliente->nome}}" >
                         </div>
                     </div>
                 </div>
@@ -268,8 +281,10 @@
                     @else
                         <a href="{{ url('storage/rg_cpf_cnh_clientes/'.$cliente->scan_rg_cpf_cnh) }}">RG, CPF ou CNH</a>
                     @endif  
-                    
-
+                    <div class="form-group">
+                        <label>Upload RG, CPF ou CNH</label>
+                        <input type="file" value="Procurar" class="form-control" placeholder="Upload RG, CPF ou CNH" name="scan_rg_cpf_cnh">
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
@@ -281,48 +296,33 @@
                     @else
                         <a href="{{ url('storage/comprovante_endereco_clientes/'.$cliente->scan_comprovante_endereco) }}">Comprovante de Endereço</a>
                     @endif
-                    
-
+                    <div class="form-group">
+                        <label>Upload Comprovante de Endereço</label>
+                        <input type="file" value="Procurar" class="form-control" placeholder="Upload RG, CPF ou CNH" name="scan_comprovante_endereco">
+                    </div>
                 </div>
             </div> 
             <div class="col-md-4">
                 <div class="form-group">
                     @if ($cliente->scan_negativas == null)
                         <label>
-                            <h5>Nenhum documento (certidão negativa) cadastrado.</h5>
+                            <h5>Nenhum documento (certidão negativa) cadastrado</h5>
                         </label>
-                        
                     @else
                         <a href="{{ url('storage/negativas_clientes/'.$cliente->scan_negativas) }}">Certidão Negativa</a> 
-                    @endif               
-                </div>
-            </div>  
-        </div>
-        <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label>Upload RG, CPF ou CNH</label>
-                        <input type="file" value="Procurar" class="form-control" placeholder="Upload RG, CPF ou CNH" name="scan_rg_cpf_cnh">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label>Upload Comprovante de Endereço</label>
-                        <input type="file" value="Procurar" class="form-control" placeholder="Upload RG, CPF ou CNH" name="scan_comprovante_endereco">
-                    </div>
-                </div> 
-                <div class="col-md-4">
+                    @endif  
                     <div class="form-group">
                         <label>Upload Certidão Negativa</label>
                         <input type="file" value="Procurar" class="form-control" placeholder="Upload RG, CPF ou CNH" name="scan_negativas">
-                    </div>
-                </div> 
-        </div>
+                    </div>             
+                </div>
+            </div> 
+            </div>            
+        </div> 
 
         <div class="box-header with-border">
-            <a href="{{ url()->previous() }}" class="btn btn-default">Voltar</a>
-            <a href="{{route('pdf')}}" class="btn btn-default">PDF</a>
-            <a href="{{route('clientes.create')}}"><button class="btn btn-primary">Adicionar</button></a>
+            <a href="{{ url()->previous() }}" class="btn btn-primary">Voltar</a>
+            <button type="submit" class="btn btn-success">Salvar as alterações</button>
         </div>
 
 

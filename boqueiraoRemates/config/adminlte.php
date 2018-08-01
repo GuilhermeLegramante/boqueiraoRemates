@@ -117,7 +117,7 @@ return [
         ],
         [
             'text'        => 'Listar Clientes Divulgação',
-            'url'         => 'clientes/',
+            'url'         => 'clientes_divulgacao/',
             'icon'        => 'list-ul',
         ],
         [
