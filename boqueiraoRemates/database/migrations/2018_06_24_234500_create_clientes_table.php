@@ -42,6 +42,7 @@ class CreateClientesTable extends Migration
             $table->enum('habilitacao', ['Habilitado', 'Bloqueado'])->nullable();
             $table->string('leiloeiras')->nullable();
             $table->string('estabelecimento')->nullable();
+            $table->string('logo_estabelecimento')->nullable();
             $table->string('scan_rg_cpf_cnh')->nullable();
             $table->string('scan_comprovante_endereco')->nullable();
             $table->string('scan_negativas')->nullable();

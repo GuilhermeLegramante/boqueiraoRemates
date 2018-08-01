@@ -86,4 +86,5 @@
         <a href="{{ url()->previous() }}" class="btn btn-default">Voltar</a>
         <a href="{{route('clientes.create')}}"><button class="btn btn-primary">Adicionar</button></a>
     </div>
+    
 @stop

@@ -267,6 +267,12 @@
                         <textarea class="form-control" rows="3" placeholder="Leiloeiras..." name="leiloeiras" id="leiloeiras"></textarea>
                     </div>
                 </div> 
+                <div class="col-md-4">
+                <div class="form-group">
+                    <label>Upload Logo Estabelecimento</label>
+                    <input type="file" value="Procurar" class="form-control" placeholder="Upload Logo Estabelecimento" name="logo_estabelecimento">
+                </div>
+            </div>
             </div>
 
             <div class="row">

@@ -58,40 +58,41 @@ class ClienteController extends Controller
             $dados['scan_negativas'] = $request->scan_negativas;
             $dados['scan_rg_cpf_cnh'] = $request->scan_cpf_cnh;
             $dados['scan_comprovante_endereco'] = $request->scan_comprovante_endereco;
-            if($request->hasFile('scan_negativas') && $request->file('scan_negativas')->isValid()
-            && $request->hasFile('scan_rg_cpf_cnh') && $request->file('scan_rg_cpf_cnh')->isValid()
-            && $request->hasFile('scan_comprovante_endereco') && $request->file('scan_comprovante_endereco')->isValid()){ 
-                
-                /**
-                 * Upload Negativas
-                 */
+
+            if($request->hasFile('scan_negativas') && $request->file('scan_negativas')->isValid()){
                 $nome = 'negativas-'.$request->cpf.'-'.kebab_case($request->nome);
                 $extensao = $request->scan_negativas->extension();
                 $nomeArquivoNegativas = "{$nome}.{$extensao}";
                 $dados['scan_negativas'] = $nomeArquivoNegativas;
                 $uploadNegativas =  $request->scan_negativas->storeAs('negativas_clientes', $nomeArquivoNegativas);
+            }
 
-                /**
-                 * Upload CPF CNH
-                 */
+            if($request->hasFile('scan_rg_cpf_cnh') && $request->file('scan_rg_cpf_cnh')->isValid()){
                 $nome2 = 'rg_cpf_cnh-'.$request->cpf.'-'.kebab_case($request->nome);
                 $extensao2 = $request->scan_rg_cpf_cnh->extension();
                 $nomeArquivoCpfCnh = "{$nome2}.{$extensao2}";
                 $dados['scan_rg_cpf_cnh'] = $nomeArquivoCpfCnh;
                 $uploadCpfCnh =  $request->scan_rg_cpf_cnh->storeAs('rg_cpf_cnh_clientes', $nomeArquivoCpfCnh);
-
-                /**
-                 * Upload Comprovante de Endereço
-                 */
+            }
+            
+            if($request->hasFile('scan_comprovante_endereco') && $request->file('scan_comprovante_endereco')->isValid()){
                 $nome3 = 'comprovante_endereco-'.$request->cpf.'-'.kebab_case($request->nome);
                 $extensao3 = $request->scan_comprovante_endereco->extension();
                 $nomeArquivoComprovanteEndereco = "{$nome3}.{$extensao3}";
                 $dados['scan_comprovante_endereco'] = $nomeArquivoComprovanteEndereco;
                 $uploadComprovanteEndereco =  $request->scan_comprovante_endereco->storeAs('comprovante_endereco_clientes', $nomeArquivoComprovanteEndereco);
                 
-                Cliente::create($dados);
-
             }
+
+            if($request->hasFile('logo_estabelecimento') && $request->file('logo_estabelecimento')->isValid()){ 
+                $nome4 = 'logo_estabelecimento-'.$request->cpf.'-'.kebab_case($request->estabelecimento);
+                $extensao4 = $request->logo_estabelecimento->extension();
+                $nomeArquivoLogoEstabelecimento = "{$nome4}.{$extensao4}";
+                $dados['logo_estabelecimento'] = $nomeArquivoLogoEstabelecimento;
+                $uploadLogoEstabelecimento =  $request->logo_estabelecimento->storeAs('logo_estabelecimento', $nomeArquivoLogoEstabelecimento);    
+            }
+            
+            Cliente::create($dados);
             return redirect()
                 ->back()
                 ->with('success', 'Cliente cadastrado com sucesso!');
