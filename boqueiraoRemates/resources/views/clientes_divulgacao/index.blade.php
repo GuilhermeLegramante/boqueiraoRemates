@@ -44,8 +44,8 @@
                                 <td>{{$clienteDivulgacao->email}}</td>
                                 <td>{{$clienteDivulgacao->estabelecimento}}</td>
                                 <td>
-                                    <a href="{{route('clientes_divulgacao.edit', $clienteDivulgacao->id)}}"><i class="glyphicon glyphicon-pencil"></i></a>
                                     <a href="{{route('clientes_divulgacao.show', $clienteDivulgacao->id)}}"><i class="glyphicon glyphicon-zoom-in"></i></a>
+                                    <a href="{{route('clientes_divulgacao.edit', $clienteDivulgacao->id)}}"><i class="glyphicon glyphicon-pencil"></i></a>
                                     <a href="{{route('clientes_divulgacao.destroy', $clienteDivulgacao->id)}}"><i class="glyphicon glyphicon-trash"></i></a>
                                 </td>                                
                             </tr>                         

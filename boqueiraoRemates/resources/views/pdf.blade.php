@@ -1,14 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>pdf</title>
+    <title>Dados do Cliente</title>
     <style type="text/css">
-        table{
-            border-collapse: collapse;
+        body {
+        background: rgb(204,204,204); 
+        }
+        page {
+        background: white;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 0.5cm;
+        box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+        padding-top: 20px;
+        padding-right: 25px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        }
+        page[size="A4"] {  
+        width: 21cm;
+        height: 29.7cm; 
+        }
+        img.cabecalho{
+            align: right;
+        }
+        table.cabecalho{
+            background: rgb(194, 194, 163);
+            padding-left: 8px;
+            padding-right: 8px;
+            width: 100%;  
+            font-family: "Calibri", Arial, Helvetica, sans-serif;
+        }
+        #customers {
+        font-family: "Calibri", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
         }
 
-        table,th,td{
-                border:1px solid black;
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #ddd;}
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .footer {
+        position:absolute;
+        bottom:0;
+        width:100%;
         }
     </style>
 </head>
@@ -23,14 +72,12 @@
             </tr>
         </thead>
         <tbody>
-             @foreach($clientes as $cliente)
                 <tr>
                     <td>{{$cliente->nome}}</td>
                     <td>{{$cliente->email}}</td>
                     <td>{{$cliente->tel_celular}}</td>
                     <td>{{$cliente->estabelecimento}}</td>                              
                 </tr>                         
-            @endforeach    
         </tbody>
     </table>
 </body>

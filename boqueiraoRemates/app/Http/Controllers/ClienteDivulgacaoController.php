@@ -59,11 +59,11 @@ class ClienteDivulgacaoController extends Controller
             
             return redirect()
                 ->back()
-                ->with('success', 'Cliente cadastrado com sucesso!');
+                ->with('success', 'Cliente Divulgação cadastrado com sucesso!');
         } catch (Exception $e) {
             return redirect()
             ->back()
-            ->with('error', 'Falha no cadastro. Verifique se o cliente já foi cadastrado!');        
+            ->with('error', 'Falha no cadastro. Verifique se o Cliente Divulgação já foi cadastrado!');        
         
         }
     }
@@ -76,7 +76,8 @@ class ClienteDivulgacaoController extends Controller
      */
     public function show($id)
     {
-        //
+        $cliente_divulgacao = ClienteDivulgacao::find($id);
+        return view('clientes_divulgacao.show', compact('cliente_divulgacao'));
     }
 
     /**
@@ -87,7 +88,8 @@ class ClienteDivulgacaoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cliente_divulgacao = ClienteDivulgacao::find($id);
+        return view('clientes_divulgacao.edit', compact('cliente_divulgacao'));
     }
 
     /**
@@ -99,7 +101,14 @@ class ClienteDivulgacaoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cliente_divulgacao = ClienteDivulgacao::find($id);
+        $dados = $request->all();
+
+        $cliente_divulgacao->update($dados);
+         
+        return redirect()
+            ->back()
+            ->with('success', 'Cliente Divulgação editado com sucesso!');
     }
 
     /**
@@ -110,13 +119,20 @@ class ClienteDivulgacaoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        ClienteDivulgacao::where('id', $id)->delete();
+        return redirect()->route('clientes_divulgacao.index');
     }
 
     public function remover($id)
     {
-        $clienteDivulgacao = ClienteDivulgacao::find($id);
-    
-        return view('clientes_divulgacao.remove', compact('clienteDivulgacao'));
+        $cliente_divulgacao = ClienteDivulgacao::find($id);
+        return view('clientes_divulgacao.remove', compact('cliente_divulgacao'));
     }
+
+    public function detalhar($id)
+    {
+        $cliente_divulgacao = ClienteDivulgacao::find($id);
+        return view('detalhes_divulgacao', compact('cliente_divulgacao'));
+    }
+
 }

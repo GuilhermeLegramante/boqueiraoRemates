@@ -338,7 +338,7 @@
 
         <div class="box-header with-border">
             <a href="{{ url()->previous() }}" class="btn btn-primary">Voltar</a>
-            <a href="{{route('pdf', $cliente->id)}}" class="btn btn-info">Gerar PDF</a>
+            <a href="{{route('detalhar', $cliente->id)}}" class="btn btn-info">Gerar PDF</a>
             <a href="{{route('clientes.edit', $cliente->id)}}" class="btn btn-success">Editar</a>
             <a href="{{route('clientes.remove', $cliente->id)}}" class="btn btn-danger">Excluir</a>
         </div>

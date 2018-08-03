@@ -86,7 +86,7 @@ class ClienteController extends Controller
             }
 
             if($request->hasFile('logo_estabelecimento') && $request->file('logo_estabelecimento')->isValid()){ 
-                $nome4 = 'logo_estabelecimento-'.$request->cpf.'-'.kebab_case($request->estabelecimento);
+                $nome4 = 'logo_estabelecimento-'.$request->nome.'-'.kebab_case($request->estabelecimento);
                 $extensao4 = $request->logo_estabelecimento->extension();
                 $nomeArquivoLogoEstabelecimento = "{$nome4}.{$extensao4}";
                 $dados['logo_estabelecimento'] = $nomeArquivoLogoEstabelecimento;
@@ -211,9 +211,6 @@ class ClienteController extends Controller
     public function detalhar($id)
     {
         $cliente = Cliente::find($id);
-        $pdf = PDF::loadView('detalhes', compact('cliente'));
-        /**return $pdf->download('teste.pdf');
-         * */
         return view('detalhes', compact('cliente'));
     }
 
