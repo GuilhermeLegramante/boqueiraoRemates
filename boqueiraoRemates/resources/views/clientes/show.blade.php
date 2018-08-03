@@ -39,6 +39,30 @@
 
         <div class="box-body">
             <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>Estabelecimento</label>
+                            <input type="text" class="form-control" placeholder="Estabelecimento" name="estabelecimento" value="{{$cliente->estabelecimento}}" disabled="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label>Logo </label>
+                            @if ($cliente->logo_estabelecimento !=null )
+                                <img src="{{ url('storage/logo_estabelecimento/'.$cliente->logo_estabelecimento) }}" class="img-responsive center-block" style="width: 20%">
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box-body">
+            <div class="row">
                 <div class="col-md-4">
                     <div class="form-group">
                         <div class="form-group">
@@ -264,7 +288,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Leiloeiras que possui cadastro</label>
-                        <textarea class="form-control" rows="3" placeholder="Leiloeiras..." name="leiloeiras" id="leiloeiras" value="{{$cliente->leiloeiras}}" disabled=""></textarea>
+                        <textarea class="form-control" rows="3"  name="leiloeiras" id="leiloeiras" value="{{$cliente->leiloeiras}}" disabled="">{{$cliente->leiloeiras}}</textarea>
                     </div>
                 </div> 
             </div>
@@ -309,16 +333,12 @@
                 </div>
             </div> 
             </div>
-
-            
-
-            
         </div> 
 
 
         <div class="box-header with-border">
             <a href="{{ url()->previous() }}" class="btn btn-primary">Voltar</a>
-            <a href="{{route('pdf')}}" class="btn btn-info">Gerar PDF</a>
+            <a href="{{route('pdf', $cliente->id)}}" class="btn btn-info">Gerar PDF</a>
             <a href="{{route('clientes.edit', $cliente->id)}}" class="btn btn-success">Editar</a>
             <a href="{{route('clientes.remove', $cliente->id)}}" class="btn btn-danger">Excluir</a>
         </div>

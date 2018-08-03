@@ -265,13 +265,30 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Leiloeiras que possui cadastro</label>
-                        <textarea class="form-control" rows="3" placeholder="Leiloeiras..." name="leiloeiras" id="leiloeiras" value="{{$cliente->leiloeiras}}"></textarea>
+                        <textarea class="form-control" rows="3" name="leiloeiras" id="leiloeiras" value="">{{$cliente->leiloeiras}}</textarea>
                     </div>
                 </div> 
+                <div class="col-md-4">
+                <label> Logo do Estabelecimento </label>
+                    <div class="form-group"> 
+                        @if ($cliente->logo_estabelecimento == null )
+                            <label>
+                                <h5>Nenhuma logo do estabelecimento cadastrada.</h5>
+                            </label>
+                        @else
+                            <a href="{{ url('storage/logo_estabelecimento/'.$cliente->logo_estabelecimento) }}">Logo Estabelecimento</a>
+                        @endif  
+                        <div class="form-group">
+                            <label>Upload Logo Estabelecimento</label>
+                            <input type="file" value="Procurar" class="form-control" placeholder="Upload Logo Estabelecimento" name="logo_estabelecimento">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <label> Documentos</label>
-            <div class="row">
             
+            <label> Documentos</label>
+            
+            <div class="row">
             <div class="col-md-4">
                 <div class="form-group"> 
                     @if ($cliente->scan_rg_cpf_cnh == null )

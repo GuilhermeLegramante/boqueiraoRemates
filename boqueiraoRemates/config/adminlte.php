@@ -130,30 +130,7 @@ return [
             'url'         => 'clientes/',
             'icon'        => 'list-ul',
         ],
-               
-        'PRODUTOS',
-        [
-            'text'        => 'Adicionar Produto',
-            'url'         => '/home',
-            'icon'        => 'plus',
-        ],
-        [
-            'text'        => 'Listar Produtos',
-            'url'         => '/home',
-            'icon'        => 'list-ul',
-        ],
 
-        'EVENTOS',
-        [
-            'text'        => 'Adicionar Evento',
-            'url'         => '/home',
-            'icon'        => 'plus',
-        ],
-        [
-            'text'        => 'Listar Eventos',
-            'url'         => '/home',
-            'icon'        => 'list-ul',
-        ],
     ],
 
     /*

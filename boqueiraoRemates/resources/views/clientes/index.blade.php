@@ -68,6 +68,7 @@
                                     <a href="{{route('clientes.show', $cliente->id)}}"><i class="glyphicon glyphicon-zoom-in"></i></a>
                                     <a href="{{route('clientes.edit', $cliente->id)}}"><i class="glyphicon glyphicon-pencil"></i></a>
                                     <a href="{{route('pdf')}}" class="glyphicon glyphicon-save"></a>
+                                    <a href="{{route('detalhar', $cliente->id)}}" class="btn btn-info">Teste Gerar PDF</a>
                                     <a href="{{route('clientes.remove', $cliente->id)}}"><i class="glyphicon glyphicon-trash"></i></a>
                                 </td>                                
                             </tr>                         

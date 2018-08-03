@@ -14,5 +14,7 @@ Route::resource('clientes', 'ClienteController');
 
 Route::resource('clientes_divulgacao', 'ClienteDivulgacaoController');
 
+Route::get('/detalhar/{id}', 'ClienteController@detalhar')->name('detalhar');
+
 Route::get('/pdf', 'PdfController@index')->name('pdf');
 

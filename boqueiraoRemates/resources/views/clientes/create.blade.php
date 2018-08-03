@@ -304,7 +304,7 @@
         
         <div class="box-header with-border">
             <a href="{{ url()->previous() }}" class="btn btn-default">Voltar</a>
-            <button type="submit" class="btn btn-success"><span class="fa fa-save"></span> Cadastrar</button>
+            <button type="submit" class="btn btn-success">Cadastrar</button>
         </div>
        
         </form>

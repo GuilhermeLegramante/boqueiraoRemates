@@ -271,6 +271,22 @@
                         <textarea class="form-control" rows="3" placeholder="Leiloeiras..." name="leiloeiras" id="leiloeiras" value="{{$cliente->leiloeiras}}" disabled=""></textarea>
                     </div>
                 </div> 
+                <div class="col-md-4">
+                <label> Logo do Estabelecimento </label>
+                    <div class="form-group"> 
+                        @if ($cliente->logo_estabelecimento == null )
+                            <label>
+                                <h5>Nenhuma logo do estabelecimento cadastrada.</h5>
+                            </label>
+                        @else
+                            <a href="{{ url('storage/logo_estabelecimento/'.$cliente->logo_estabelecimento) }}" disabled="">Logo Estabelecimento</a>
+                        @endif  
+                        <div class="form-group">
+                            <label>Upload Logo Estabelecimento</label>
+                            <input type="file" value="Procurar" class="form-control" placeholder="Upload Logo Estabelecimento" name="logo_estabelecimento" disabled="">
+                        </div>
+                    </div>
+                </div>
             </div>
             <label> Documentos</label>
             <div class="row">
