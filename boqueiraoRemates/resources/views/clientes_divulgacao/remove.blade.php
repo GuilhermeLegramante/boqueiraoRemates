@@ -109,7 +109,7 @@
         
         <div class="box-header with-border">
             <a href="{{ url()->previous() }}" class="btn btn-primary">Voltar</a>
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Remover Cliente Divulgação</button>
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Excluir Cliente Divulgação</button>
         </div>
        
         <!-- Modal -->
@@ -120,14 +120,14 @@
             <div class="modal-content">
                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Remover Cliente</h4>
+                <h4 class="modal-title">Excluir Cliente</h4>
                 </div>
                 <div class="modal-body">
-                <p>Deseja realmente remover o Cliente Divulgação {{"$cliente_divulgacao->nome"}}?</p>
+                <p>Deseja realmente excuir o Cliente Divulgação {{"$cliente_divulgacao->nome"}}?</p>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn btn-danger">Remover</button>
+                <button type="submit" class="btn btn-danger">Excluir</button>
                 </div>
             </div>
         </div>

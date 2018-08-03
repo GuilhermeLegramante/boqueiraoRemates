@@ -135,4 +135,9 @@ class ClienteDivulgacaoController extends Controller
         return view('detalhes_divulgacao', compact('cliente_divulgacao'));
     }
 
+    public function viraCliente($id){
+        $cliente_divulgacao = ClienteDivulgacao::find($id);
+        return view('viraCliente', compact('cliente_divulgacao'));
+    }
+
 }

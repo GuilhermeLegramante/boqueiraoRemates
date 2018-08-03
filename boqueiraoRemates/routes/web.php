@@ -20,3 +20,5 @@ Route::get('/detalhar/{id}', 'ClienteController@detalhar')->name('detalhar');
 
 Route::get('/pdf', 'PdfController@index')->name('pdf');
 
+Route::get('/viraCliente/{id}', 'ClienteDivulgacaoController@viraCliente')->name('viraCliente');
+

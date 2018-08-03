@@ -107,7 +107,7 @@
             <a href="{{ url()->previous() }}" class="btn btn-primary">Voltar</a>
             <a href="{{route('detalhar', $cliente_divulgacao->id)}}" class="btn btn-info">Gerar PDF</a>
             <a href="{{route('clientes_divulgacao.edit', $cliente_divulgacao->id)}}" class="btn btn-success">Editar</a>
-            <a href="" class="btn btn-warning">Cadastrar como Cliente</a>
+            <a href="{{ route('viraCliente', $cliente_divulgacao->id) }}" class="btn btn-warning">Cadastrar como Cliente</a>
             <a href="{{route('clientes_divulgacao.remove', $cliente_divulgacao->id)}}" class="btn btn-danger">Excluir</a>
         </div>
        
