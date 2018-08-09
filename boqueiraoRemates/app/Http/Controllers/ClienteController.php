@@ -145,11 +145,22 @@ class ClienteController extends Controller
         $cliente = Cliente::find($id);
         $dados = $request->all();
 
-        $dados['scan_negativas'] = $request->scan_negativas;
-        $dados['scan_rg_cpf_cnh'] = $request->scan_cpf_cnh;
-        $dados['scan_comprovante_endereco'] = $request->scan_comprovante_endereco;
-        $dados['logo_estabelecimento'] = $request->logo_estabelecimento;
+        if ($request->scan_negativas != null){
+            $dados['scan_negativas'] = $request->scan_negativas;
+        }
 
+        if ($request->scan_rg_cpf_cnh != null){
+            $dados['scan_rg_cpf_cnh'] = $request->scan_cpf_cnh;
+        }
+
+        if ($request->scan_comprovante_endereco != null){
+            $dados['scan_comprovante_endereco'] = $request->scan_comprovante_endereco;
+        }
+
+        if ($request->logo_estabelecimento != null){
+            $dados['logo_estabelecimento'] = $request->logo_estabelecimento;
+        }
+        
         if($request->hasFile('scan_negativas') && $request->file('scan_negativas')->isValid()){
             $nome = 'negativas-'.$request->cpf.'-'.kebab_case($request->nome);
             $extensao = $request->scan_negativas->extension();
@@ -176,7 +187,7 @@ class ClienteController extends Controller
         }
 
         if($request->hasFile('logo_estabelecimento') && $request->file('logo_estabelecimento')->isValid()){ 
-            $nome4 = 'logo_estabelecimento-'.$request->cpf.'-'.kebab_case($request->estabelecimento);
+            $nome4 = 'logo_estabelecimento-'.$request->nome.'-'.kebab_case($request->estabelecimento);
             $extensao4 = $request->logo_estabelecimento->extension();
             $nomeArquivoLogoEstabelecimento = "{$nome4}.{$extensao4}";
             $dados['logo_estabelecimento'] = $nomeArquivoLogoEstabelecimento;

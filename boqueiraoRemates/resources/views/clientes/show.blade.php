@@ -158,47 +158,16 @@
                 <div class="col-md-1">
                     <div class="form-group">
                         <label>UF</label>
-                        <select class="form-control" name="uf" value="{{$cliente->uf}}" disabled="">
-                            <option>RS</option>
-                            <option>SC</option> 
-                            <option>PR</option>
-                            <option>MG</option> 
-                            <option>SP</option>  
-                            <option>RJ</option>
-                            <option>ES</option>
-                            <option>MT</option>
-                            <option>MS</option>
-                            <option>GO</option>
-                            <option>DF</option>
-                            <option>AC</option>
-                            <option>AL</option>
-                            <option>AP</option>
-                            <option>AM</option>
-                            <option>BA</option>
-                            <option>CE</option>
-                            <option>MA</option>
-                            <option>PA</option>
-                            <option>PB</option>
-                            <option>PE</option>
-                            <option>PI</option>
-                            <option>RJ</option>
-                            <option>RN</option>
-                            <option>RO</option>
-                            <option>RR</option>
-                            <option>SE</option>
-                            <option>TO</option>
-
+                        <select class="form-control" name="uf" value="" disabled="">
+                            <option>{{$cliente->uf}}</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="form-group">
                         <label>País</label>
-                        <select class="form-control" name="pais" value="{{$cliente->pais}}" disabled="">
-                            <option>Brasil</option>
-                            <option>Argentina</option> 
-                            <option>Uruguai</option>
-                            <option>Paraguai</option>   
+                        <select class="form-control" name="pais" value="" disabled="">
+                            <option>{{$cliente->pais}}</option> 
                         </select>
                     </div>
                 </div>
@@ -266,9 +235,8 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label>Habilitação</label>
-                        <select class="form-control" name="habilitacao" value="{{$cliente->habilitacao}}" disabled="">
-                            <option>Habilitado</option>
-                            <option>Bloqueado</option>    
+                        <select class="form-control" name="habilitacao" disabled="">
+                            <option>{{$cliente->habilitacao}}</option>
                         </select>
                     </div>
                 </div>
@@ -278,9 +246,8 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label>Cadastro em outras leiloeiras</label>
-                        <select class="form-control" name="cadastro_leiloeiras" id="cadastro_leiloeiras" value="{{$cliente->cadastro_leiloeiras}}" disabled="">
-                            <option>Sim</option>
-                            <option>Não</option>    
+                        <select class="form-control" name="cadastro_leiloeiras" id="cadastro_leiloeiras" value="" disabled="">
+                            <option>{{$cliente->cadastro_leiloeiras}}</option>
                         </select>
                     </div>
                 </div>

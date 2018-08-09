@@ -280,7 +280,7 @@
                         @endif  
                         <div class="form-group">
                             <label>Upload Logo Estabelecimento</label>
-                            <input type="file" value="Procurar" class="form-control" placeholder="Upload Logo Estabelecimento" name="logo_estabelecimento">
+                            <input type="file" value="" class="form-control" placeholder="Upload Logo Estabelecimento" name="logo_estabelecimento">
                         </div>
                     </div>
                 </div>
@@ -315,7 +315,7 @@
                     @endif
                     <div class="form-group">
                         <label>Upload Comprovante de Endereço</label>
-                        <input type="file" value="Procurar" class="form-control" placeholder="Upload RG, CPF ou CNH" name="scan_comprovante_endereco">
+                        <input type="file" value="" class="form-control" placeholder="Upload RG, CPF ou CNH" name="scan_comprovante_endereco">
                     </div>
                 </div>
             </div> 
@@ -330,7 +330,7 @@
                     @endif  
                     <div class="form-group">
                         <label>Upload Certidão Negativa</label>
-                        <input type="file" value="Procurar" class="form-control" placeholder="Upload RG, CPF ou CNH" name="scan_negativas">
+                        <input type="file" value="{{ $cliente->scan_negativas }}" class="form-control" placeholder="Upload RG, CPF ou CNH" name="scan_negativas">
                     </div>             
                 </div>
             </div> 
