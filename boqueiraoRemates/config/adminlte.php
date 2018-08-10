@@ -109,7 +109,7 @@ return [
     */
 
     'menu' => [
-        'CLIENTES',
+        'CLIENTES DIVULGAÇÃO',
         [
             'text'        => 'Adicionar Cliente Divulgação',
             'url'         => 'clientes_divulgacao/create',
@@ -120,6 +120,8 @@ return [
             'url'         => 'clientes_divulgacao/',
             'icon'        => 'list-ul',
         ],
+
+        'CLIENTES',
         [
             'text'        => 'Adicionar Cliente',
             'url'         => 'clientes/create',

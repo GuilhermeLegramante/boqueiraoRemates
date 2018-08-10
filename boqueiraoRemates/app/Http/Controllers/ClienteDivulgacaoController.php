@@ -129,7 +129,7 @@ class ClienteDivulgacaoController extends Controller
         return view('clientes_divulgacao.remove', compact('cliente_divulgacao'));
     }
 
-    public function detalhar($id)
+    public function detalhar_divulgacao($id)
     {
         $cliente_divulgacao = ClienteDivulgacao::find($id);
         return view('detalhes_divulgacao', compact('cliente_divulgacao'));

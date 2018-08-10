@@ -18,6 +18,8 @@ Route::resource('clientes_divulgacao', 'ClienteDivulgacaoController');
 
 Route::get('/detalhar/{id}', 'ClienteController@detalhar')->name('detalhar');
 
+Route::get('/detalhar_divulgacao/{id}', 'ClienteDivulgacaoController@detalhar_divulgacao')->name('detalhar_divulgacao');
+
 Route::get('/pdf', 'PdfController@index')->name('pdf');
 
 Route::get('/viraCliente/{id}', 'ClienteDivulgacaoController@viraCliente')->name('viraCliente');
