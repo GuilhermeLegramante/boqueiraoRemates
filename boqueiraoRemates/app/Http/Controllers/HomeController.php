@@ -29,7 +29,7 @@ class HomeController extends Controller
         $total_clientes_divulgacao = DB::table('clientes_divulgacao')->count();
         $total_habilitados = DB::table('clientes')->where('habilitacao', 'Habilitado')->count();
 
-        $percentual_habilitados = $total_habilitados * $total_clientes / 100;
+        $percentual_habilitados = ($total_habilitados * 100) / $total_clientes;
 
         return view('home', compact('total_clientes', 'total_clientes_divulgacao', 'total_habilitados', 'percentual_habilitados'));
     }
